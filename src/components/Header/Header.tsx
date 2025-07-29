@@ -1,0 +1,117 @@
+import React, { useState, useEffect } from "react"
+import NavItem from "./NavItem"
+import SearchBar from "./SearchBar"
+import Button from "../UI/Button"
+
+const Header: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  return (
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white shadow-md py-2"
+          : "bg-gradient-to-r from-indigo-900 to-indigo-700 py-4"
+      }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <div className="flex items-center">
+            <div className="bg-white p-2 rounded-lg mr-3">
+              <div className="bg-gradient-to-r from-yellow-400 to-yellow-300 w-8 h-8 rounded"></div>
+            </div>
+            <h1
+              className={`text-2xl font-bold ${
+                isScrolled ? "text-indigo-700" : "text-white"
+              }`}
+            >
+              Penerbit <span className="text-yellow-400">Terang</span>
+            </h1>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:block">
+            <ul className="flex space-x-2">
+              <NavItem href="#" isActive>
+                Beranda
+              </NavItem>
+              <NavItem href="#">Katalog</NavItem>
+              <NavItem href="#">Penulis</NavItem>
+              <NavItem href="#">Tentang Kami</NavItem>
+              <NavItem href="#">Kontak</NavItem>
+            </ul>
+          </nav>
+
+          {/* Search and Cart - Desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            <SearchBar />
+            <Button
+              variant="secondary"
+              icon="fas fa-shopping-cart"
+              className="relative"
+            >
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                3
+              </span>
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <i
+              className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-2xl ${
+                isScrolled ? "text-gray-800" : "text-white"
+              }`}
+            ></i>
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pb-4">
+            <div className="mb-4">
+              <SearchBar />
+            </div>
+            <ul className="space-y-2">
+              <NavItem href="#" isActive>
+                Beranda
+              </NavItem>
+              <NavItem href="#">Katalog</NavItem>
+              <NavItem href="#">Penulis</NavItem>
+              <NavItem href="#">Tentang Kami</NavItem>
+              <NavItem href="#">Kontak</NavItem>
+            </ul>
+            <div className="mt-4 flex justify-center">
+              <Button
+                variant="secondary"
+                icon="fas fa-shopping-cart"
+                className="relative"
+              >
+                Keranjang
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  3
+                </span>
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
+  )
+}
+
+export default Header
