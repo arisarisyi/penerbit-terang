@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import NavItem from "./NavItem"
 import SearchBar from "./SearchBar"
 import Button from "../UI/Button"
+import logo from "../../../public/img/penerbit-terang.png"
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -28,20 +29,21 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="bg-white p-2 rounded-lg mr-3">
-              <div className="bg-gradient-to-r from-yellow-400 to-yellow-300 w-8 h-8 rounded"></div>
-            </div>
             <h1
               className={`text-2xl font-bold ${
-                isScrolled ? "text-indigo-700" : "text-white"
+                isScrolled ? "text-yellow-300" : "text-white"
               }`}
             >
-              Penerbit <span className="text-yellow-400">Terang</span>
+              <img
+                src="/img/penerbit-terang.png"
+                alt="Penerbit Terang Logo"
+                className="h-12 mr-3" // Sesuaikan ukuran sesuai kebutuhan
+              />
             </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          {/* <nav className="hidden md:block">
             <ul className="flex space-x-2">
               <NavItem href="#" isActive>
                 Beranda
@@ -51,12 +53,12 @@ const Header: React.FC = () => {
               <NavItem href="#">Tentang Kami</NavItem>
               <NavItem href="#">Kontak</NavItem>
             </ul>
-          </nav>
+          </nav> */}
 
           {/* Search and Cart - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
             <SearchBar />
-            <Button
+            {/* <Button
               variant="secondary"
               icon="fas fa-shopping-cart"
               className="relative"
@@ -64,7 +66,7 @@ const Header: React.FC = () => {
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 3
               </span>
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}

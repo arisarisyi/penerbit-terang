@@ -3,14 +3,12 @@ import { Book } from "../types/bookTypes"
 export const books: Book[] = [
   {
     id: 1,
-    title: "Cahaya di Ujung Terowongan",
-    author: "Ahmad Taufik",
-    coverImage:
-      "https://via.placeholder.com/300x450/4F46E5/FFFFFF?text=Cahaya+di+Ujung",
-    description:
-      "Sebuah kisah inspiratif tentang perjuangan melawan kegelapan dan menemukan harapan di tempat tak terduga.",
+    title: "Mata Harumi",
+    author: "Putu Oka Sukananta",
+    coverImage: "/img/mataharumi.jpeg",
+    description: "",
     price: 125000,
-    category: "Fiksi",
+    category: "Sejarah",
     rating: 4.5,
     pages: 320,
     publishDate: "2023-05-15",
@@ -19,14 +17,12 @@ export const books: Book[] = [
   },
   {
     id: 2,
-    title: "Kode Sang Revolusioner",
-    author: "Budi Santoso",
-    coverImage:
-      "https://via.placeholder.com/300x450/10B981/FFFFFF?text=Kode+Sang+Revolusioner",
-    description:
-      "Mengungkap rahasia di balik revolusi teknologi yang mengubah wajah dunia digital.",
+    title: "Misi di Tanah Koloni",
+    author: "Willy Alfarius",
+    coverImage: "/img/misiditanahkoloni.jpeg",
+    description: "Pekabaran Kristen Advent di Lampung, 1924-1990an",
     price: 150000,
-    category: "Teknologi",
+    category: "Sejarah",
     rating: 4.8,
     pages: 280,
     publishDate: "2023-07-20",
@@ -35,14 +31,12 @@ export const books: Book[] = [
   },
   {
     id: 3,
-    title: "Investasi Cerdas",
-    author: "Citra Dewi",
-    coverImage:
-      "https://via.placeholder.com/300x450/EF4444/FFFFFF?text=Investasi+Cerdas",
-    description:
-      "Panduan praktis untuk memulai investasi dengan modal kecil dan menghasilkan keuntungan besar.",
-    price: 110000,
-    category: "Bisnis",
+    title: "Tunakarya di Negara Baru Merdeka",
+    author: "Rika Inggit Asmawati",
+    coverImage: "/img/tunakarya.png",
+    description: "Pengangguran Revolusi di Yogyakarta tahun 1950-an",
+    price: 68000,
+    category: "Sejarah",
     rating: 4.2,
     pages: 240,
     publishDate: "2023-03-10",
@@ -51,14 +45,13 @@ export const books: Book[] = [
   },
   {
     id: 4,
-    title: "Quantum Mind",
-    author: "Dian Sastro",
-    coverImage:
-      "https://via.placeholder.com/300x450/8B5CF6/FFFFFF?text=Quantum+Mind",
+    title: "Terbang di Atas Koloni",
+    author: "Dwi Adi Wicaksono",
+    coverImage: "/img/terbangdiataskoloni.png",
     description:
-      "Menjelajahi hubungan antara fisika kuantum dan potensi pikiran manusia yang belum tergali.",
-    price: 135000,
-    category: "Sains",
+      "Pembentukan dan Dinamika Maskapai Penerbangan KNILM, 1928-1942",
+    price: 100000,
+    category: "Sejarah",
     rating: 4.7,
     pages: 360,
     publishDate: "2023-06-05",
@@ -67,13 +60,11 @@ export const books: Book[] = [
   },
   {
     id: 5,
-    title: "Runtuhnya Kerajaan Nusantara",
-    author: "Eko Prasetyo",
-    coverImage:
-      "https://via.placeholder.com/300x450/F59E0B/000000?text=Runtuhnya+Kerajaan",
-    description:
-      "Analisis mendalam tentang penyebab keruntuhan kerajaan-kerajaan besar di Nusantara.",
-    price: 95000,
+    title: "Nasionalisme Jawa di Era Modern",
+    author: "Farabi Fakih",
+    coverImage: "/img/nasionalismejawa.jpeg",
+    description: "Pemikiran Politik Tjipto Mangoenkoesoemo dan Noto Soeroto",
+    price: 78000,
     category: "Sejarah",
     rating: 4.3,
     pages: 290,
@@ -83,14 +74,13 @@ export const books: Book[] = [
   },
   {
     id: 6,
-    title: "Seni Hidup Minimalis",
-    author: "Fitriani",
-    coverImage:
-      "https://via.placeholder.com/300x450/EC4899/FFFFFF?text=Seni+Hidup+Minimalis",
+    title: "Dalil Penghalau Sang Bathil",
+    author: "Satrio Dwicahyo",
+    coverImage: "/img/dalilpenghalau.png",
     description:
-      "Transformasi hidup melalui pendekatan minimalis untuk mencapai kebahagiaan sejati.",
-    price: 85000,
-    category: "Self-Help",
+      "Kampanye Anti Kolonisme oleh Partai Politik Islam di Indonesia 1950an - 1960an",
+    price: 72000,
+    category: "Sejarah",
     rating: 4.6,
     pages: 210,
     publishDate: "2023-04-18",
@@ -99,12 +89,10 @@ export const books: Book[] = [
   },
   {
     id: 7,
-    title: "Bisnis Digital Era 5.0",
-    author: "Gunawan Wibisono",
-    coverImage:
-      "https://via.placeholder.com/300x450/3B82F6/FFFFFF?text=Bisnis+Digital+Era+5.0",
-    description:
-      "Strategi membangun bisnis digital yang tangguh di era transformasi digital 5.0.",
+    title: "Dalam Bayang-Bayang Modernitas",
+    author: "Tedy Harnawan",
+    coverImage: "/img/dalambayang.jpg",
+    description: "Orang-orang Indo di kota Magelang pada akhir masa kolonial",
     price: 145000,
     category: "Bisnis",
     rating: 4.9,
@@ -115,14 +103,13 @@ export const books: Book[] = [
   },
   {
     id: 8,
-    title: "Kembara Jiwa",
-    author: "Hana Putri",
-    coverImage:
-      "https://via.placeholder.com/300x450/14B8A6/FFFFFF?text=Kembara+Jiwa",
+    title: "Membangun Jembatan Udara",
+    author: "Dwi Adi Wicaksono",
+    coverImage: "/img/membangunjembatan.jpg",
     description:
-      "Perjalanan spiritual seorang wanita dalam mencari makna hidup sejati.",
+      "Pembentukan dan nasionalisasi maskapai penerbangan sipil Indonesia 1928-1962",
     price: 99000,
-    category: "Fiksi",
+    category: "Sejarah",
     rating: 4.4,
     pages: 270,
     publishDate: "2023-02-28",

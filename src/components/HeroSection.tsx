@@ -44,9 +44,7 @@ const HeroSection: React.FC = () => {
                   <div className="bg-gray-900 p-6">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className="text-xl font-bold">
-                          Cahaya di Ujung Terowongan
-                        </h3>
+                        <h3 className="text-xl font-bold">Mata Harumi</h3>
                         <p className="text-indigo-400">Ahmad Taufik</p>
                       </div>
                       <span className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-sm font-bold">
@@ -63,7 +61,7 @@ const HeroSection: React.FC = () => {
                         <i className="fas fa-star-half-alt"></i>
                       </div>
                       <p className="text-gray-400 text-sm">
-                        320 halaman • Fiksi Inspiratif
+                        320 halaman • Sejarah
                       </p>
                     </div>
 
