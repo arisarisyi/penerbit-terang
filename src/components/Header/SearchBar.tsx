@@ -1,13 +1,18 @@
 import React, { useState } from "react"
 import Button from "../UI/Button"
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+  onSearch?: (query: string) => void
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("")
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Searching for:", searchTerm)
-    // Implement search functionality
+    if (onSearch && searchTerm.trim()) {
+      onSearch(searchTerm.trim())
+    }
   }
 
   return (

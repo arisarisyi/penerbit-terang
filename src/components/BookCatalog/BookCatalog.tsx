@@ -17,11 +17,16 @@ const categories: Category[] = [
   "Self-Help",
 ]
 
-const BookCatalog: React.FC = () => {
+interface BookCatalogProps {
+  externalSearchQuery?: string
+  externalCategory?: Category
+}
+
+const BookCatalog: React.FC<BookCatalogProps> = ({ externalSearchQuery = "", externalCategory = "Semua" }) => {
   const [filteredBooks, setFilteredBooks] = useState<Book[]>(books)
-  const [selectedCategory, setSelectedCategory] = useState<Category>("Semua")
+  const [selectedCategory, setSelectedCategory] = useState<Category>(externalCategory)
   const [isLoading, setIsLoading] = useState(true)
-  const [searchQuery, setSearchQuery] = useState("")
+  const [searchQuery, setSearchQuery] = useState(externalSearchQuery)
 
   useEffect(() => {
     // Simulate loading data
@@ -31,6 +36,20 @@ const BookCatalog: React.FC = () => {
 
     return () => clearTimeout(timer)
   }, [])
+
+  // Update search query when external search changes
+  useEffect(() => {
+    if (externalSearchQuery) {
+      setSearchQuery(externalSearchQuery)
+    }
+  }, [externalSearchQuery])
+
+  // Update category when external category changes
+  useEffect(() => {
+    if (externalCategory !== "Semua") {
+      setSelectedCategory(externalCategory)
+    }
+  }, [externalCategory])
 
   useEffect(() => {
     filterBooks()
@@ -95,7 +114,7 @@ const BookCatalog: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div id="katalog-buku" className="container mx-auto px-4 py-6">
       <div className="mb-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Katalog Buku Unggulan

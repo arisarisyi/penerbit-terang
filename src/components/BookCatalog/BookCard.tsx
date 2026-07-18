@@ -8,6 +8,12 @@ interface BookCardProps {
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
+  const handleBuyClick = () => {
+    const message = `Halo, PenerbitTerang. Saya tertarik membeli buku '${book.title}'. Apakah bukunya tersedia? Jika ada, mohon infokan harga. Terima kasih banyak!`
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=62895379143698&text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, "_blank")
+  }
+
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
       <div className="relative">
@@ -56,11 +62,8 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           {book.description}
         </p>
 
-        <div className="flex justify-between items-center">
-          <span className="text-xl font-bold text-indigo-700">
-            Rp {book.price.toLocaleString("id-ID")}
-          </span>
-          <Button variant="primary" icon="fas fa-shopping-cart">
+        <div className="flex justify-end">
+          <Button variant="primary" icon="fas fa-shopping-cart" onClick={handleBuyClick}>
             Beli
           </Button>
         </div>

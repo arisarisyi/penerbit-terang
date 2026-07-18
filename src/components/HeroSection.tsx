@@ -2,6 +2,20 @@ import React from "react"
 import Button from "./UI/Button"
 
 const HeroSection: React.FC = () => {
+  const scrollToCatalog = () => {
+    const catalogElement = document.getElementById("katalog-buku")
+    if (catalogElement) {
+      catalogElement.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const handleBuyClick = () => {
+    const bookTitle = "Mata Harumi"
+    const message = `Halo, PenerbitTerang. Saya tertarik membeli buku '${bookTitle}'. Apakah bukunya tersedia? Jika ada, mohon infokan harga. Terima kasih banyak!`
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=62895379143698&text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, "_blank")
+  }
+
   return (
     <div className="relative bg-gradient-to-r from-indigo-900 to-indigo-700 text-white pt-32 pb-20">
       <div className="absolute inset-0 overflow-hidden">
@@ -27,11 +41,13 @@ const HeroSection: React.FC = () => {
               dalam hidup Anda.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" icon="fas fa-book-open">
+              <Button
+                variant="primary"
+                size="lg"
+                icon="fas fa-book-open"
+                onClick={scrollToCatalog}
+              >
                 Jelajahi Katalog
-              </Button>
-              <Button variant="outline" size="lg" icon="fas fa-play-circle">
-                Tonton Video
               </Button>
             </div>
           </div>
@@ -72,12 +88,12 @@ const HeroSection: React.FC = () => {
                       dalam menghadapi tantangan hidup.
                     </p>
 
-                    <div className="flex justify-between items-center">
-                      <span className="text-2xl font-bold">Rp 125.000</span>
+                    <div className="flex justify-end">
                       <Button
                         variant="primary"
                         size="sm"
                         icon="fas fa-shopping-cart"
+                        onClick={handleBuyClick}
                       >
                         Beli Sekarang
                       </Button>

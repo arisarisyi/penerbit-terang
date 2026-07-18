@@ -3,7 +3,11 @@ import NavItem from "./NavItem"
 import SearchBar from "./SearchBar"
 import Button from "../UI/Button"
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onSearch?: (query: string) => void
+}
+
+const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -56,7 +60,7 @@ const Header: React.FC = () => {
 
           {/* Search and Cart - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <SearchBar />
+            <SearchBar onSearch={onSearch} />
             {/* <Button
               variant="secondary"
               icon="fas fa-shopping-cart"
@@ -85,7 +89,7 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="mb-4">
-              <SearchBar />
+              <SearchBar onSearch={onSearch} />
             </div>
             <ul className="space-y-2">
               <NavItem href="#" isActive>
