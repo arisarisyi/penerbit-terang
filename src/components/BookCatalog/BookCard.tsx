@@ -58,7 +58,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           </span>
         </div>
 
-        <p className="text-gray-700 mb-4 line-clamp-3 h-16">
+        <p className="text-gray-700 mb-4">
           {book.description}
         </p>
 

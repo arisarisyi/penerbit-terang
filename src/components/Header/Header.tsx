@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import NavItem from "./NavItem"
 import SearchBar from "./SearchBar"
-import Button from "../UI/Button"
 
 interface HeaderProps {
   onSearch?: (query: string) => void
@@ -15,7 +14,6 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -40,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
               <img
                 src="/img/penerbit-terang.png"
                 alt="Penerbit Terang Logo"
-                className="h-12 mr-3" // Sesuaikan ukuran sesuai kebutuhan
+                className="h-12 mr-3"
               />
             </h1>
           </div>
@@ -61,15 +59,6 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
           {/* Search and Cart - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
             <SearchBar onSearch={onSearch} />
-            {/* <Button
-              variant="secondary"
-              icon="fas fa-shopping-cart"
-              className="relative"
-            >
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                3
-              </span>
-            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -87,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
+          <div className="md:hidden mt-4 pb-4 bg-white rounded-lg shadow-xl p-4">
             <div className="mb-4">
               <SearchBar onSearch={onSearch} />
             </div>
@@ -100,18 +89,6 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
               <NavItem href="#">Tentang Kami</NavItem>
               <NavItem href="#">Kontak</NavItem>
             </ul>
-            <div className="mt-4 flex justify-center">
-              <Button
-                variant="secondary"
-                icon="fas fa-shopping-cart"
-                className="relative"
-              >
-                Keranjang
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  3
-                </span>
-              </Button>
-            </div>
           </div>
         )}
       </div>
