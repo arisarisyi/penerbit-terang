@@ -1,3 +1,32 @@
 # https://www.robotstxt.org/robotstxt.html
+
+# Allow all web crawlers to access the site
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow specific paths if any
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, to prevent overloading the server)
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://penerbitterang.com/sitemap.xml
+
+# Popular search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Social media crawlers
+User-agent:facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /

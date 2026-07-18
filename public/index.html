@@ -1,34 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
     />
+
+    <!-- Primary Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#4F46E5" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Penerbit Terang - Menebarkan ilmu pengetahuan melalui buku-buku berkualitas yang menginspirasi dan mencerahkan. Temukan koleksi buku terbaik dari berbagai kategori."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta name="keywords" content="penerbit terang, buku, toko buku, beli buku, buku fiksi, buku non-fiksi, penerbit buku indonesia" />
+    <meta name="author" content="Penerbit Terang" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Indonesian" />
+    <meta name="geo.region" content="ID" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Penerbit Terang</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://penerbitterang.com/" />
+    <meta property="og:title" content="Penerbit Terang - Buku Inspiratif & Mencerahkan" />
+    <meta property="og:description" content="Temukan koleksi buku terbaik dari Penerbit Terang. Menebarkan ilmu pengetahuan melalui buku-buku berkualitas yang menginspirasi." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Penerbit Terang" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://penerbitterang.com/" />
+    <meta property="twitter:title" content="Penerbit Terang - Buku Inspiratif & Mencerahkan" />
+    <meta property="twitter:description" content="Temukan koleksi buku terbaik dari Penerbit Terang. Menebarkan ilmu pengetahuan melalui buku-buku berkualitas." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://penerbitterang.com/" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="%PUBLIC_URL%/logo512.png" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://api.whatsapp.com">
+
+    <!-- Security Headers Meta Tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <title>Penerbit Terang - Buku Inspiratif & Mencerahkan</title>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BookStore",
+      "name": "Penerbit Terang",
+      "description": "Menebarkan ilmu pengetahuan melalui buku-buku berkualitas yang menginspirasi dan mencerahkan",
+      "url": "https://penerbitterang.com",
+      "logo": "https://penerbitterang.com/logo192.png",
+      "sameAs": [
+        "https://www.instagram.com/penerbitterang"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID",
+        "addressLocality": "Indonesia"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+62-895-3791-4369",
+        "availableLanguage": "Indonesian"
+      }
+    }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
