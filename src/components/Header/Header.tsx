@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import NavItem from "./NavItem"
 import SearchBar from "./SearchBar"
 import Button from "../UI/Button"
-import logo from "../../../public/img/penerbit-terang.png"
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)

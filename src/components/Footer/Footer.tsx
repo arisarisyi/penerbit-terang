@@ -10,9 +10,6 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center mb-4">
-              <div className="bg-white p-2 rounded-lg mr-3">
-                <div className="bg-gradient-to-r from-yellow-400 to-yellow-300 w-8 h-8 rounded"></div>
-              </div>
               <h3 className="text-xl font-bold">
                 Penerbit <span className="text-yellow-400">Terang</span>
               </h3>
