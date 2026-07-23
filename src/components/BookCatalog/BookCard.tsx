@@ -1,4 +1,5 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
 import { Book } from "../../types/bookTypes"
 import Button from "../UI/Button"
 import Rating from "../UI/Rating"
@@ -8,14 +9,36 @@ interface BookCardProps {
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
+  const navigate = useNavigate()
+
+  const handleCardClick = () => {
+    navigate(`/book/${book.slug}`)
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault()
+      handleCardClick()
+    }
+  }
+
   const handleBuyClick = () => {
-    const message = `Halo, PenerbitTerang. Saya tertarik membeli buku '${book.title}'. Apakah bukunya tersedia? Jika ada, mohon infokan harga. Terima kasih banyak!`
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=62895379143698&text=${encodeURIComponent(message)}`
+    const message = `Halo, PenerbitTerang. Saya tertarik membeli buku '${book.title}'. Apakah bukunya tersedia? Jika ada, mohon inforkan harga. Terima kasih banyak!`
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=62895379143698&text=${encodeURIComponent(
+      message
+    )}`
     window.open(whatsappUrl, "_blank")
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+    <div
+      className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer"
+      onClick={handleCardClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`Lihat detail ${book.title}`}
+    >
       <div className="relative">
         <div className="overflow-hidden">
           <img
@@ -58,14 +81,22 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           </span>
         </div>
 
-        <p className="text-gray-700 mb-4">
-          {book.description}
-        </p>
+        <p className="text-gray-700 mb-4">{book.description}</p>
 
         <div className="flex justify-end">
-          <Button variant="primary" icon="fas fa-shopping-cart" onClick={handleBuyClick}>
-            Beli
-          </Button>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.stopPropagation()
+              }
+            }}
+            role="presentation"
+          >
+            <Button variant="primary" icon="fas fa-shopping-cart" onClick={handleBuyClick}>
+              Beli
+            </Button>
+          </div>
         </div>
       </div>
     </div>

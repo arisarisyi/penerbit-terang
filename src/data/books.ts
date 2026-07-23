@@ -3,6 +3,7 @@ import { Book } from "../types/bookTypes"
 export const books: Book[] = [
   {
     id: 1,
+    slug: "mata-harumi",
     title: "Mata Harumi",
     author: "Putu Oka Sukananta",
     coverImage: "/img/mataharumi.jpeg",
@@ -17,6 +18,7 @@ export const books: Book[] = [
   },
   {
     id: 2,
+    slug: "misi-di-tanah-koloni",
     title: "Misi di Tanah Koloni",
     author: "Willy Alfarius",
     coverImage: "/img/misiditanahkoloni.jpeg",
@@ -31,6 +33,7 @@ export const books: Book[] = [
   },
   {
     id: 3,
+    slug: "tunakarya-di-negara-baru-merdeka",
     title: "Tunakarya di Negara Baru Merdeka",
     author: "Rika Inggit Asmawati",
     coverImage: "/img/tunakarya.png",
@@ -45,6 +48,7 @@ export const books: Book[] = [
   },
   {
     id: 4,
+    slug: "terbang-di-atas-koloni",
     title: "Terbang di Atas Koloni",
     author: "Dwi Adi Wicaksono",
     coverImage: "/img/terbangdiataskoloni.png",
@@ -60,6 +64,7 @@ export const books: Book[] = [
   },
   {
     id: 5,
+    slug: "nasionalisme-jawa-di-era-modern",
     title: "Nasionalisme Jawa di Era Modern",
     author: "Farabi Fakih",
     coverImage: "/img/nasionalismejawa.jpeg",
@@ -74,6 +79,7 @@ export const books: Book[] = [
   },
   {
     id: 6,
+    slug: "dalil-penghalau-sang-bathil",
     title: "Dalil Penghalau Sang Bathil",
     author: "Satrio Dwicahyo",
     coverImage: "/img/dalilpenghalau.png",
@@ -89,6 +95,7 @@ export const books: Book[] = [
   },
   {
     id: 7,
+    slug: "dalam-bayang-bayang-modernitas",
     title: "Dalam Bayang-Bayang Modernitas",
     author: "Tedy Harnawan",
     coverImage: "/img/dalambayang.jpg",
@@ -103,6 +110,7 @@ export const books: Book[] = [
   },
   {
     id: 8,
+    slug: "membangun-jembatan-udara",
     title: "Membangun Jembatan Udara",
     author: "Dwi Adi Wicaksono",
     coverImage: "/img/membangunjembatan.jpg",

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import NavItem from "./NavItem"
 import SearchBar from "./SearchBar"
 
@@ -7,6 +8,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onSearch }) => {
+  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -29,18 +31,24 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center">
-            <h1
-              className={`text-2xl font-bold ${
-                isScrolled ? "text-yellow-300" : "text-white"
-              }`}
-            >
-              <img
-                src="/img/penerbit-terang.png"
-                alt="Penerbit Terang Logo"
-                className="h-12 mr-3"
-              />
-            </h1>
+          <div
+            className="flex items-center cursor-pointer"
+            onClick={() => navigate("/")}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault()
+                navigate("/")
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            aria-label="Ke halaman utama"
+          >
+            <img
+              src="/img/penerbit-terang.png"
+              alt="Penerbit Terang Logo"
+              className="h-12"
+            />
           </div>
 
           {/* Desktop Navigation */}
