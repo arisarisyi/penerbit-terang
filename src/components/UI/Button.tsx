@@ -6,7 +6,7 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg"
   icon?: string
   className?: string
-  onClick?: () => void
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const Button: React.FC<ButtonProps> = ({

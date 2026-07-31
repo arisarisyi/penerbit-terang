@@ -15,13 +15,6 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
     navigate(`/book/${book.slug}`)
   }
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault()
-      handleCardClick()
-    }
-  }
-
   const handleBuyClick = () => {
     const message = `Halo, PenerbitTerang. Saya tertarik membeli buku '${book.title}'. Apakah bukunya tersedia? Jika ada, mohon inforkan harga. Terima kasih banyak!`
     const whatsappUrl = `https://api.whatsapp.com/send?phone=62895379143698&text=${encodeURIComponent(
@@ -30,23 +23,24 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
     window.open(whatsappUrl, "_blank")
   }
 
+  // Truncate description to 250 characters
+  const truncateDescription = (text: string, maxLength: number = 250) => {
+    if (text.length <= maxLength) return text
+    return text.substring(0, maxLength).trim() + "..."
+  }
+
   return (
-    <div
-      className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer"
+    <button
+      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-pointer text-left w-full"
       onClick={handleCardClick}
-      onKeyDown={handleKeyDown}
-      role="button"
-      tabIndex={0}
       aria-label={`Lihat detail ${book.title}`}
     >
-      <div className="relative">
-        <div className="overflow-hidden">
-          <img
-            src={book.coverImage}
-            alt={book.title}
-            className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
+      <div className="relative bg-gray-100 w-full" style={{ paddingBottom: '150%' }}>
+        <img
+          src={book.coverImage}
+          alt={book.title}
+          className="absolute inset-0 w-full h-full object-contain"
+        />
 
         <div className="absolute top-3 right-3 flex flex-col gap-2">
           {book.isNewRelease && (
@@ -81,25 +75,22 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           </span>
         </div>
 
-        <p className="text-gray-700 mb-4">{book.description}</p>
+        <p className="text-gray-700 mb-4">{truncateDescription(book.description)}</p>
 
         <div className="flex justify-end">
-          <div
-            onClick={(e) => e.stopPropagation()}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.stopPropagation()
-              }
+          <Button
+            variant="primary"
+            icon="fas fa-shopping-cart"
+            onClick={(e) => {
+              e?.stopPropagation()
+              handleBuyClick()
             }}
-            role="presentation"
           >
-            <Button variant="primary" icon="fas fa-shopping-cart" onClick={handleBuyClick}>
-              Beli
-            </Button>
-          </div>
+            Beli
+          </Button>
         </div>
       </div>
-    </div>
+    </button>
   )
 }
 

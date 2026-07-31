@@ -124,4 +124,20 @@ export const books: Book[] = [
     isFeatured: false,
     isNewRelease: false,
   },
+  {
+    id: 9,
+    slug: "memori-serah-jabatan-residen-madura",
+    title: "ARSIP DAN KEKUASAAN Memori Serah Jabatan Residen Madura, 1905-1931",
+    author: "Tedy Harnawan",
+    coverImage: "/img/memori-serah-jabatan-residen-madura.jpeg",
+    description:
+      "Orang Madura sangat taat menjalankan kewajiban agama dan tampak lebih religius dibandingkan Orang Jawa atau Sunda. Ribuan orang menunaikan ibadah haji setiap tahun sehingga permohonan cuti dari kepala desa menjadi hal yang lumrah. Frederick Bute Batten (Residen Madura, 1920-1923)Dalam hal kecakapan ekonomi dan etos kerja, orang-orang Madura kerap disebut sebagai “Orang Skotlandia dari Hindia Belanda”. Akibat tidak dimanjakan oleh kondisi tanah yang subur, sejak dahulu mereka berikhtiar menyiasati keterbatasan alam tersebut melalui ketajaman naluri berdagang serta prinsip hidup yang hemat. Mereka merantau ke berbagai pelosok daerah dan kembali ke tanah kelahiran dengan membawa keberhasilan finansial. Johannes Gerardus van Heijst (Residen Madura, 1926-1928)",
+    price: 99000,
+    category: "Sejarah",
+    rating: 4.4,
+    pages: 304,
+    publishDate: "2026-06-28",
+    isFeatured: false,
+    isNewRelease: true,
+  },
 ]
