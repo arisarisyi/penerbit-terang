@@ -11,7 +11,7 @@ const Footer: React.FC<FooterProps> = ({ onCategoryClick }) => {
   const handleCategoryClick = (categoryName: string) => {
     // Map footer category names to actual category values
     const categoryMap: Record<string, Category> = {
-      "Fiksi": "Fiksi",
+      Fiksi: "Fiksi",
       "Non-Fiksi": "Non-Fiksi",
       "Sains & Teknologi": "Teknologi",
       "Bisnis & Ekonomi": "Bisnis",
@@ -160,10 +160,23 @@ const Footer: React.FC<FooterProps> = ({ onCategoryClick }) => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex justify-center">
-          <p className="text-gray-500 text-sm">
-            &copy; {currentYear} Penerbit Terang. Hak Cipta Dilindungi.
-          </p>
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col items-center text-gray-500 text-sm text-center">
+            <p>
+              &copy; {currentYear} Penerbit Terang. Hak Cipta Dilindungi.
+            </p>
+            <p className="mt-2">
+              Created by{" "}
+              <a
+                href="https://www.alarisyi.web.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                alarisyi
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
