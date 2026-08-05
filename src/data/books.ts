@@ -126,7 +126,7 @@ export const books: Book[] = [
   },
   {
     id: 9,
-    slug: "memori-serah-jabatan-residen-madura",
+    slug: "arsip-dan-kekuasaan",
     title: "ARSIP DAN KEKUASAAN Memori Serah Jabatan Residen Madura, 1905-1931",
     author: "Tedy Harnawan",
     coverImage: "/img/memori-serah-jabatan-residen-madura.jpeg",
